@@ -1,10 +1,12 @@
 function onOpen() {
+  
   var ui = SpreadsheetApp.getUi();
-  ui.createMenu('ScratchUserSheet')
-      .addItem('Display user', 'main')
+  ui.createMenu('Render')
+      .addItem('Image by URL', 'main')
       .addSeparator()
       .addItem('Source code', 'github')
       .addToUi()
+  
 }
 
 function main() {
@@ -16,7 +18,7 @@ function main() {
 
   Logger.log(sheet.getUrl())
 
-  var value = SpreadsheetApp.getUi().prompt('Enter a valid Scratch user: ').getResponseText()
+  var value = SpreadsheetApp.getUi().prompt('Enter a valid URL: ').getResponseText()
   var resp = JSON.parse(UrlFetchApp.fetch('https://pixelsinimage.herokuapp.com/api?u='+value).getContentText())
 
   var [a, n] = [0, 1]
@@ -40,7 +42,7 @@ function main() {
 
 function github() {
 
-  var htmlOutput = HtmlService.createHtmlOutputFromFile('source').setHeight(100);
+  var htmlOutput = HtmlService.createHtmlOutputFromFile('index').setHeight(100);
   SpreadsheetApp.getUi().showModalDialog(htmlOutput, 'Going to the source code...');
 
 }
