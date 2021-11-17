@@ -3,7 +3,7 @@ Render images pixel-by-pixel in Google Sheets!
 
 ![i](https://raw.githubusercontent.com/ajskateboarder/stuff/main/sheet.png)
 
-<sub>Default user avatar</sub>
+<sub>Github logo</sub>
 
 ## How it works
 - Sends a GET request to an external API to get a pixel array of a user's image.
