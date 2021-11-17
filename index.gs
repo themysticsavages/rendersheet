@@ -1,6 +1,6 @@
 function onOpen() {
   var ui = SpreadsheetApp.getUi();
-  ui.createMenu('ScratchUsers')
+  ui.createMenu('ScratchUserSheet')
       .addItem('Display user', 'main')
       .addSeparator()
       .addItem('Source code', 'github')
